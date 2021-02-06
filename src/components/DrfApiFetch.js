@@ -99,7 +99,7 @@ const DrfApiFetch = (props) => {
     
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/v1/bigthree/',{
+        axios.get('http://18.183.227.181//api/v1/bigthree/',{
             headers: {
                 'Authorization': 'Token ${token}'
             }
@@ -110,7 +110,7 @@ const DrfApiFetch = (props) => {
     },[])
 
     const getBigthree = () =>{
-        axios.get(`http://127.0.0.1:8000/api/v1/bigthree/${id}/`,{
+        axios.get(`http://18.183.227.181/api/v1/bigthree/${id}/`,{
             headers: {
                 'Authorization': 'Token ${token}'
             }
@@ -119,7 +119,7 @@ const DrfApiFetch = (props) => {
     }
 
     const editBigthree =(bigone) => {
-        axios.put(`http://127.0.0.1:8000/api/v1/bigthree/${bigone.id}/`, bigone, {
+        axios.put(`http://18.183.227.181/api/v1/bigthree/${bigone.id}/`, bigone, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Token ${token}'
@@ -142,7 +142,7 @@ const DrfApiFetch = (props) => {
             reps: one.reps,
             username: username
         }
-        axios.post("http://127.0.0.1:8000/api/v1/bigthree/", data,{
+        axios.post("http://18.183.227.181/api/v1/bigthree/", data,{
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Token ${token}'
@@ -180,7 +180,7 @@ const DrfApiFetch = (props) => {
     const data = convert()
 
     const deleteTraining = (id) => {
-        axios.delete(`http://127.0.0.1:8000/api/v1/bigthree/${id}`,{
+        axios.delete(`http://18.183.227.181/api/v1/bigthree/${id}`,{
             headers: {
                 'Authorization': 'Token ${token}'
             }})

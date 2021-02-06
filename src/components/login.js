@@ -56,7 +56,7 @@ const Login = (props) => {
             password: credentials.password
         }
         
-        axios.post("http://127.0.0.1:8000/auth/", data,{
+        axios.post("http://18.183.227.181/auth/", data,{
             headers: {
                 'Content-Type': 'application/json',
             }})
@@ -75,7 +75,7 @@ const Login = (props) => {
             password: newUser.password
         }
         console.log(data)
-        axios.post("http://127.0.0.1:8000/api/v1/users/", data,{
+        axios.post("http://18.183.227.181/api/v1/users/", data,{
             headers: {
                 'Content-Type': 'application/json',
             }})
