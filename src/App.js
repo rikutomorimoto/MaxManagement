@@ -1,24 +1,43 @@
 import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import {react,useState} from 'react'
 
-function App() {
-  return (
+import DrfApiFetch from './components/DrfApiFetch'
+import Login from './components/login'
+import {createMuiTheme} from '@material-ui/core/styles/'
+import {ThemeProvider as MuiThemeProvider} from '@material-ui/core/styles'
+import indigo from '@material-ui/core/colors/indigo'
+import { Typography } from '@material-ui/core';
+
+const theme = createMuiTheme({
+  palette:{
+    primary: indigo,
+    secondary: {
+      main: '#f44336'
+    },
+    typography:{
+      button:{
+        textTransform: "none"
+      },
+      fontFamily:'Comic Neue'
+    }
+  }
+})
+
+const App = () =>{
+
+  const [userInfo, setUserInfo] = useState({username:"", token:""})
+  return (    
+    <MuiThemeProvider theme={theme}>      
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-header">      
+        { userInfo.token ?< DrfApiFetch userInfo = {userInfo}/>
+        :<Login setUserInfo = {setUserInfo}/>
+        }                      
       </header>
     </div>
+    </MuiThemeProvider>
+    
   );
 }
 
