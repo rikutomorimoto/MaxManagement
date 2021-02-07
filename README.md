@@ -10,9 +10,10 @@
     ・体の各部位に対する幅広い筋トレ種目に対応
 
 ## 開発環境
-フロントエンド：javascript, react, material-ui
-バックエンド：python, django, nginx, gunicorn
-インフラ：AWS(EC2, S3, CloudFront)
+
+    ・フロントエンド：javascript, react, material-ui
+    ・バックエンド：python, django, nginx, gunicorn
+    ・インフラ：AWS(EC2, S3, CloudFront)
 
 ## 実装した機能
     ・ログイン認証機能(djangorestframeworkのtoken認証を使用)
@@ -26,4 +27,9 @@
     ・react・・・2020年12月時点で，フロントエンド側にreactやvue.jsを用いたSPAのWEBアプリケーションがトレンドの技術であり，魅力を感じたため．
     ・AWS・・・現在求職市場ではWEBアプリケーションはインフラにAWSを使用している企業が多く，アピール材料となると考えたため．
     
-## 
+## 経歴
+    ・2020年3月　関西大学　環境都市工学部　都市システム工学科を卒業
+        在学中にC,C++,javascriptを授業で学ぶが興味はゼロ
+        しかし，大学4年次に研究室に配属され，研究の補助としてpythonを学ぶ
+        
+    
