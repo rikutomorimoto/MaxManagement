@@ -14,8 +14,9 @@ URL:http://release-max-management-service.s3-website-ap-northeast-1.amazonaws.co
 
 ## 開発環境
 
-    ・フロントエンド：javascript, react, material-ui
+    ・フロントエンド：javascript, react
     ・バックエンド：python, django, nginx, gunicorn
+    ・データベース：mySQL 
     ・インフラ：AWS(EC2, S3, CloudFront)
 
 ## 実装した機能
