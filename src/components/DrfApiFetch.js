@@ -1,12 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import {LineChart, Line , XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import {LineChart, Line , XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 import moment from 'moment'
-import { Button, makeStyles, Typography ,Box} from '@material-ui/core'
-import Icon from '@material-ui/icons'
-import { DeleteIcon } from '@material-ui/icons/Delete'
-import styled from 'styled-components'
-import spacing from '@material-ui/system'
+import { Button, makeStyles ,Box} from '@material-ui/core'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -26,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        width: '100%', // Fix IE 11 issue.
+        width: '100%', 
         marginTop: theme.spacing(1),
     },
     submit: {
@@ -93,15 +89,14 @@ const DrfApiFetch = (props) => {
     const token = props.userInfo.token
     const [bigthree, setBigthree] = useState([])
     const [selectedBigthree, setSelectedBigthree] = useState([])
-    const [id, setId] = useState([1])
     const [editedBigthree, setEditedBigthree] = useState({id:'', weight:'',reps:'', title:'', username: username})
     const [training, setTraining] = useState({id:'', title:'', username: username})
     
 
     useEffect(() => {
-        axios.get('http://18.183.227.181//api/v1/bigthree/',{
+        axios.get('http://18.183.227.181/api/v1/bigthree/',{
             headers: {
-                'Authorization': 'Token ${token}'
+                Authorization: `Token ${token}`
             }
         })
         .then(
@@ -109,20 +104,20 @@ const DrfApiFetch = (props) => {
             console.log(token)
     },[])
 
-    const getBigthree = () =>{
+    /* const getBigthree = () =>{
         axios.get(`http://18.183.227.181/api/v1/bigthree/${id}/`,{
             headers: {
                 'Authorization': 'Token ${token}'
             }
         })
         .then(res => {setSelectedBigthree(res.data)})
-    }
+    } */
 
     const editBigthree =(bigone) => {
         axios.put(`http://18.183.227.181/api/v1/bigthree/${bigone.id}/`, bigone, {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Token ${token}'
+                Authorization: `Token ${token}`
             }})
         .then(res => {setBigthree(bigthree.map(bigone => (bigone.id === editedBigthree.id ? res.data : bigone)));
             setEditedBigthree({id: '', weight:'', reps:'', title:'', username: username})
@@ -145,7 +140,7 @@ const DrfApiFetch = (props) => {
         axios.post("http://18.183.227.181/api/v1/bigthree/", data,{
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Token ${token}'
+                Authorization: `Token ${token}`
             }})
             .then(res => {setBigthree([...bigthree, res.data]);
                 setEditedBigthree({id: '', weight:'', reps:'', title:'', username: username})
@@ -182,7 +177,7 @@ const DrfApiFetch = (props) => {
     const deleteTraining = (id) => {
         axios.delete(`http://18.183.227.181/api/v1/bigthree/${id}`,{
             headers: {
-                'Authorization': 'Token ${token}'
+                Authorization: `Token ${token}`
             }})
             .then(res => {setBigthree(bigthree.filter(bigone => bigone.id !== id)); setSelectedBigthree([])})
             if (editedBigthree.id === id){

@@ -1,14 +1,10 @@
 import {React, useState} from 'react'
 import axios from 'axios'
-
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import { Divider, makeStyles, Typography } from '@material-ui/core'
+import { makeStyles, Typography } from '@material-ui/core'
 
 import TextField from '@material-ui/core/TextField';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Container from '@material-ui/core/Container';
-import { calendarFormat } from 'moment';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        width: '100%', // Fix IE 11 issue.
+        width: '100%', 
         marginTop: theme.spacing(1),
     },
     submit: {
