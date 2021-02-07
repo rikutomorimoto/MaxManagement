@@ -27,6 +27,7 @@ URL:http://release-max-management-service.s3-website-ap-northeast-1.amazonaws.co
 ## 今後の改善点
     ・ローカル環境では動作していたuseEffectの機能不全の解消
     ・新機能の追加（他ユーザーとの比較，プロフィール機能）
+    ・レスポンシブ対応
     
 ## 言語，フレームワーク等の選定について
     ・python・・・大学4年次での研究活動にて使用していた言語であり，現職でも使用している言語である故に，馴染みが深いため．
