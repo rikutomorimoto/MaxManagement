@@ -101,7 +101,6 @@ const DrfApiFetch = (props) => {
         })
         .then(
             res => {setBigthree(res.data)})
-            console.log(token)
     },[])
 
     /* const getBigthree = () =>{
@@ -151,6 +150,7 @@ const DrfApiFetch = (props) => {
     const convert = () => {
         const result = bigthree.map(bigone => {
             if((bigone.title === editedBigthree.title) && (bigone.username === username)){
+            
             return {time:moment(bigone.created_at).valueOf(),
                     val1 : bigone.rm,
                     val2 : bigone.weight,
@@ -167,12 +167,10 @@ const DrfApiFetch = (props) => {
 
     const convert2 = () => {
         const result = bigthree.filter(one => (one.title === editedBigthree.title) && (one.username === username))
+        console.log(editedBigthree.title)
         result.sort((a, b) => a.created_at < b.created_at ? 1 : -1)
         return result
     }
-
-    const tmpresult = convert2()
-    const data = convert()
 
     const deleteTraining = (id) => {
         axios.delete(`http://18.183.227.181/api/v1/bigthree/${id}`,{
@@ -299,7 +297,7 @@ const DrfApiFetch = (props) => {
                 <LineChart
                 width={1500}
                 height={1000}
-                data={data}
+                data={convert()}
                 margin={{
                     top:30,right:130,left:200,bottom:90,
                 }}
@@ -341,7 +339,7 @@ const DrfApiFetch = (props) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                    {tmpresult.map((bigone) => (
+                    {convert2().map((bigone) => (
                         <TableRow >
                         <TableCell><h4>{bigone.created_at}</h4></TableCell>
                         <TableCell align="right"><h4>{bigone.weight}</h4></TableCell>
