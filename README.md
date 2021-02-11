@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# 本ポートフォリオの概要
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+URL:http://release-max-management-service.s3-website-ap-northeast-1.amazonaws.com/
 
-## Available Scripts
+本ポートフォリオは，開発者である森本陸斗が趣味とする筋肉トレーニングでの，以下の悩みを解決するものとして開発しました．
 
-In the project directory, you can run:
+    ・筋トレである程度の成長をすると，見た目では変化を感じづらくなるため，成長の実感を得辛くなる
+    ・筋肉は成長しても，筋出力（=パワー）が伸びているかがわかりづらい
+    ・筋トレを管理するアプリケーションはたくさんあるが，どれもページを行ったりきたりする必要があるため，煩わしくなる時がある
+そこで，上記の問題を解決するために，以下の要件を満たしたwebアプリケーションを開発しようと考えました．
 
-### `npm start`
+    ・トレーニングの1stSetの重量，反復回数から，最大重量(=1Rep Max=1RM)を算出し，記録
+    ・記録したデータをグラフ化
+    ・体の各部位に対する幅広い筋トレ種目に対応
+    ・完全SPA化されたアプリケーションにより，ページ移動のストレスを解消
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 開発環境
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    ・フロントエンド：javascript, react
+    ・バックエンド：python, django, nginx, gunicorn
+    ・データベース：mySQL 
+    ・インフラ：AWS(EC2, S3, CloudFront)
 
-### `npm test`
+## 実装した機能
+    ・ログイン認証機能(djangorestframeworkのtoken認証を使用)
+    ・reactによる完全SPA化されたアプリケーション
+    ・各トレーニング種目に応じたトレーニング結果の取得，記録，更新，削除(CRUD)
+    ・各トレーニング種目の最大重量の記録，グラフ化
+    
+## 今後の改善点
+    ・ローカル環境では動作していたuseEffectの機能不全の解消
+    ・新機能の追加（他ユーザーとの比較，プロフィール機能）
+    ・レスポンシブ対応
+    
+## 言語，フレームワーク等の選定について
+    ・python・・・大学4年次での研究活動にて使用していた言語であり，現職でも使用している言語である故に，馴染みが深いため．
+    ・django・・・pythonでwebアプリケーションを開発するなら最も使われているdjangoを使おうと考えたため．
+    ・react・・・完全SPA化したWEBアプリケーションを作る上で，vue.jsとreactで悩んだが，より難しいとされるreactの方が自分の成長につながるのではないかと考えたため．
+    ・AWS・・・現在求職市場ではWEBアプリケーションはインフラにAWSを使用している企業が多く，アピール材料となると考えたため．
+    
+## 経歴
+    ・2020年3月　関西大学　環境都市工学部　都市システム工学科を卒業
+        在学中にC,C++,javascriptを授業で学ぶが興味はゼロ
+        その後大学4年次に研究室に配属され，研究の補助としてpythonを学び，プログラミングの面白さに気づく
+        研究の中でpythonの他に統計学（スチューデントのt検定,ウェルチのt検定，回帰分析）を学び，定量的かつロジカルに物事を考える重要さを知り始める
+    ・2020年4月~　某東証一部上場企業のSEとして勤務
+        ■お客様先でopenstackを用いた大規模NFVシステムにおける，自動試験スクリプトの保守，新規機能分の開発を担当
+        言語はpython，ライブラリはselenium,request,unittest等を使用
+        ■突如自社で同期が退職したことにより，自社に戻りカメラ，レコーダーの複合検証プロジェクトに参画
+        基本は試験であるため単調な作業ではあるが，上司の手作業や試験の一部を自ら提案しpythonを用いて自動化し，プロジェクト全体の工数削減に大きく貢献
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+ここまでReadmeを閲覧していただきありがとうございます．
+もしご興味をお持ちいただけましたら，以下にご連絡をお願いいたします．
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+メールアドレス：riku10da.shh@gmail.com
+    
