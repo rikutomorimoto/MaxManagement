@@ -191,75 +191,75 @@ const DrfApiFetch = (props) => {
             <h1>あなたのトレーニングのMAX(1RM)は？</h1>                        
             <table>                            
             <th>
-            <h1>BIG3</h1>            
+            <h3>BIG3</h3>            
             {big3Menu.map(one => <Box component="span" m={1}>
             <Button 
             type="submit"
             variant="contained"
             color="secondary"
-            size="large"
+            size="small"
             className={classes.submit}
             onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             <br />
-            <h1>Chest</h1>
+            <h3>Chest</h3>
             {chestMenu.map(one => <Box component="span" m={1}>
             <Button 
             type="submit"
             variant="contained"
             color="secondary"
-            size="large"
+            size="small"
             className={classes.submit}
             onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}            
             <br />
-            <h1>Back</h1>
+            <h3>Back</h3>
             {backMenu.map(one => <Box component="span" m={1}>
             <Button 
             type="submit"
             variant="contained"
             color="secondary"
-            size="large"
+            size="small"
             className={classes.submit}
             onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             </th>
             <th>
-            <h1>Leg</h1>
+            <h3>Leg</h3>
             {legMenu.map(one => <Box component="span" m={1}>
             <Button 
             type="submit"
             variant="contained"
             color="secondary"
-            size="large"
+            size="small"
             className={classes.submit}
             onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             <br />
-            <h1>Sholder</h1>
+            <h3>Sholder</h3>
             {sholderMenu.map(one => <Box component="span" m={1}>
             <Button 
             type="submit"
             variant="contained"
             color="secondary"
-            size="large"
+            size="small"
             className={classes.submit}
             onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             <br />
-            <h1>Arm</h1>
+            <h3>Arm</h3>
             {armMenu.map(one => <Box component="span" m={1}>
             <Button 
             type="submit"
             variant="contained"
             color="secondary"
-            size="large"
+            size="small"
             className={classes.submit}
             onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             </th>
             </table>
-            <h3>選択中：{ editedBigthree.title = training.title }</h3>
+            <h4>選択中：{ editedBigthree.title = training.title }</h4>
                 <label>
                     <TextField 
                     variant="outlined" 
@@ -269,7 +269,7 @@ const DrfApiFetch = (props) => {
                     name="weight"
                     label="weight"
                     value={editedBigthree.weight} 
-                    Autocomplete
+                    autocomplete
                     onChange={handleInputChange()} 
                     autoFocus
                     />
@@ -283,7 +283,7 @@ const DrfApiFetch = (props) => {
                     name="reps"
                     label="reps"
                     value={editedBigthree.reps} 
-                    Autocomplete
+                    autocomplete
                     onChange={handleInputChange()} 
                     autoFocus
                     />
@@ -295,8 +295,8 @@ const DrfApiFetch = (props) => {
                 <th>
                     
                 <LineChart
-                width={1500}
-                height={1000}
+                width={1000}
+                height={500}
                 data={convert()}
                 margin={{
                     top:30,right:130,left:200,bottom:90,
@@ -307,23 +307,23 @@ const DrfApiFetch = (props) => {
                     dataKey="time"
                     domain={["auto", "auto"]}
                     tickFormatter={(t) => moment(t).format("YY/MM/DD")}
-                    tick={{fontSize:30}}
+                    tick={{fontSize:10}}
                     scale="time"
                     type="number"
                     padding={{left:50}}
                     label={{
-                        value: "Date", offset: -50, position: "insideBottomRight", fontSize:50
+                        value: "Date", offset: -30, position: "insideBottomRight", fontSize:20
                     }}
                 />
                 < YAxis 
-                    label={{ value: "1RM(kg)", offset:-70 ,angle:-90, position: "insideLeft" , fontSize:50}}
+                    label={{ value: "1RM(kg)", offset:-10 ,angle:-90, position: "insideLeft" , fontSize:20}}
                     domain={'dataMin','dataMax'}
-                    tick={{fontSize:30}}
+                    tick={{fontSize:10}}
                     padding={{bottom:50}}
                 />
                 <Tooltip />
                 <Legend verticalAlign="top" /> 
-                <Line type="linear" dataKey="val1" name="1RM" stroke="red" dot={{ stroke: "skyblue", strokeWidth: 7}} unit="kg"/>
+                <Line type="linear" dataKey="val1" name="1RM" stroke="red" dot={{ stroke: "skyblue", strokeWidth: 3}} unit="kg"/>
                 </LineChart>
                 
                 </th>                    
