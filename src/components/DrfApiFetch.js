@@ -201,7 +201,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="large"
             className={classes.submit}
-            onClick={()=>{setTraining(one);setEditedBigthree({id: '', weight:'', reps:'', title:'', username: username})}} >{ one.title }</Button></Box>
+            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             <br />
             <h1>Chest</h1>
@@ -212,7 +212,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="large"
             className={classes.submit}
-            onClick={()=>{setTraining(one);setEditedBigthree({id: '', weight:'', reps:'', title:'', username: username})}} >{ one.title }</Button></Box>
+            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}            
             <br />
             <h1>Back</h1>
@@ -223,7 +223,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="large"
             className={classes.submit}
-            onClick={()=>{setTraining(one);setEditedBigthree({id: '', weight:'', reps:'', title:'', username: username})}} >{ one.title }</Button></Box>
+            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             </th>
             <th>
@@ -235,7 +235,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="large"
             className={classes.submit}
-            onClick={()=>{setTraining(one);setEditedBigthree({id: '', weight:'', reps:'', title:'', username: username})}} >{ one.title }</Button></Box>
+            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             <br />
             <h1>Sholder</h1>
@@ -246,7 +246,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="large"
             className={classes.submit}
-            onClick={()=>{setTraining(one);setEditedBigthree({id: '', weight:'', reps:'', title:'', username: username})}} >{ one.title }</Button></Box>
+            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             <br />
             <h1>Arm</h1>
@@ -257,7 +257,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="large"
             className={classes.submit}
-            onClick={()=>{setTraining(one);setEditedBigthree({id: '', weight:'', reps:'', title:'', username: username})}} >{ one.title }</Button></Box>
+            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
             )}
             </th>
             </table>
