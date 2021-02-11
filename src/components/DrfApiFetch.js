@@ -42,7 +42,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 10,
     },
     table: {
-        display: 'flex'
+        display: 'flex',
+    },
+    tableRow: {
+        height: "1px"
     }
 }));
 
@@ -90,7 +93,7 @@ const DrfApiFetch = (props) => {
     const [bigthree, setBigthree] = useState([])
     const [selectedBigthree, setSelectedBigthree] = useState([])
     const [editedBigthree, setEditedBigthree] = useState({id:'', weight:'',reps:'', title:'', username: username})
-    const [training, setTraining] = useState({id:'', title:'', username: username})
+    const [menu, setMenu] = useState({id:'', title:'', username: username})
     
 
     useEffect(() => {
@@ -167,7 +170,6 @@ const DrfApiFetch = (props) => {
 
     const convert2 = () => {
         const result = bigthree.filter(one => (one.title === editedBigthree.title) && (one.username === username))
-        console.log(editedBigthree.title)
         result.sort((a, b) => a.created_at < b.created_at ? 1 : -1)
         return result
     }
@@ -199,7 +201,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="small"
             className={classes.submit}
-            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
+            onClick={()=>{setMenu(one)}} >{ one.title }</Button></Box>
             )}
             <br />
             <h3>Chest</h3>
@@ -210,7 +212,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="small"
             className={classes.submit}
-            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
+            onClick={()=>{setMenu(one)}} >{ one.title }</Button></Box>
             )}            
             <br />
             <h3>Back</h3>
@@ -221,7 +223,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="small"
             className={classes.submit}
-            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
+            onClick={()=>{setMenu(one)}} >{ one.title }</Button></Box>
             )}
             </th>
             <th>
@@ -233,7 +235,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="small"
             className={classes.submit}
-            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
+            onClick={()=>{setMenu(one)}} >{ one.title }</Button></Box>
             )}
             <br />
             <h3>Sholder</h3>
@@ -244,7 +246,7 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="small"
             className={classes.submit}
-            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
+            onClick={()=>{setMenu(one)}} >{ one.title }</Button></Box>
             )}
             <br />
             <h3>Arm</h3>
@@ -255,11 +257,11 @@ const DrfApiFetch = (props) => {
             color="secondary"
             size="small"
             className={classes.submit}
-            onClick={()=>{setTraining(one)}} >{ one.title }</Button></Box>
+            onClick={()=>{setMenu(one)}} >{ one.title }</Button></Box>
             )}
             </th>
             </table>
-            <h4>選択中：{ editedBigthree.title = training.title }</h4>
+            <h4>選択中：{ editedBigthree.title = menu.title }</h4>
                 <label>
                     <TextField 
                     variant="outlined" 
@@ -321,7 +323,7 @@ const DrfApiFetch = (props) => {
                     tick={{fontSize:10}}
                     padding={{bottom:50}}
                 />
-                <Tooltip />
+                
                 <Legend verticalAlign="top" /> 
                 <Line type="linear" dataKey="val1" name="1RM" stroke="red" dot={{ stroke: "skyblue", strokeWidth: 3}} unit="kg"/>
                 </LineChart>
@@ -330,21 +332,21 @@ const DrfApiFetch = (props) => {
                     <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell style={{width: 300}}><h2>Date</h2></TableCell>
-                            <TableCell style={{width: 100}}><h2>weight(kg)</h2></TableCell>
-                            <TableCell style={{width: 100}}><h2>reps(回)</h2></TableCell>
-                            <TableCell style={{width: 100}}><h2>1RM(kg)</h2></TableCell>
-                            <TableCell style={{width: 20}}><h4>DEL</h4></TableCell>
-                            <TableCell style={{width: 20}}><h4>UPD</h4></TableCell>
+                            <TableCell style={{width: 200}}><h4>Date</h4></TableCell>
+                            <TableCell style={{width: 30}}><h4>weight(kg)</h4></TableCell>
+                            <TableCell style={{width: 30}}><h4>reps(回)</h4></TableCell>
+                            <TableCell style={{width: 30}}><h4>1RM(kg)</h4></TableCell>
+                            <TableCell style={{width: 10}}><h6>DEL</h6></TableCell>
+                            <TableCell style={{width: 10}}><h6>UPD</h6></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                     {convert2().map((bigone) => (
-                        <TableRow >
-                        <TableCell><h4>{bigone.created_at}</h4></TableCell>
-                        <TableCell align="right"><h4>{bigone.weight}</h4></TableCell>
-                        <TableCell align="right"><h4>{bigone.reps}</h4></TableCell>
-                        <TableCell align="right"><h4>{bigone.rm}</h4></TableCell>
+                        <TableRow className={classes.tableRow} >
+                        <TableCell><h5>{bigone.created_at}</h5></TableCell>
+                        <TableCell align="right" ><h5>{bigone.weight}</h5></TableCell>
+                        <TableCell align="right"><h5>{bigone.reps}</h5></TableCell>
+                        <TableCell align="right"><h5>{bigone.rm}</h5></TableCell>
                         <TableCell>
                         <button onClick={() => deleteTraining(bigone.id)}>
                             <i className="fas fa-trash-alt"></i>
